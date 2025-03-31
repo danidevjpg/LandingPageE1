@@ -1,97 +1,174 @@
-// icons
-import { FaArrowRightLong } from "react-icons/fa6";
-// icons
+import { useState } from "react";
 
 function Navbar() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img src="Logo.svg" className="h-4" alt="Site Logo" />
-        </a>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
+    <>
+      <nav className="hidden md:block bg-gray-50 border-gray-200 dark:bg-gray-900">
+        <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+          <a
+            href="#"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium items-baseline flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-green-300 md:p-0 dark:text-white"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-300 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-300 md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Community
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-300 md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-300 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <button
-                type="button"
-                className="focus:outline-none text-white bg-green-600 hover:bg-green-700 rounded px-5 py-2.5 flex items-center space-x-2"
-              >
-                <span>Register Now</span>
-                <FaArrowRightLong className="ml-2" />
-              </button>
-            </li>
-          </ul>
+            <img src="Logo.svg" className="h-5" alt="Site Logo" />
+            <p className="text-xl font-bold dark:text-white">Nexcent</p>
+          </a>
+          <div className="w-auto">
+            <ul className="font-medium flex items-baseline space-x-8 rtl:space-x-reverse">
+              <li>
+                <a
+                  href="#"
+                  className="text-white md:bg-transparent md:text-green-300"
+                  aria-current="page"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                >
+                  Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                >
+                  Product
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                >
+                  Testimonial
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <button
+                  className="text-white text-sm bg-green-600 py-1 px-5 rounded-lg cursor-pointer hover:bg-green-700 transition hover:scale-105"
+                  onClick={() => setShowPopup(true)}
+                >
+                  Login
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-2xl shadow-xl w-96 relative flex flex-col items-center">
+            <button
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+              onClick={() => setShowPopup(false)}
+            >
+              ×
+            </button>
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Sign In</h2>
+            <form className="w-full space-y-6">
+              <div className="flex flex-col">
+                <label className="text-gray-700 font-medium mb-1">Email</label>
+                <input
+                  type="email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
+                  required
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-gray-700 font-medium mb-1">Password</label>
+                <input
+                  type="password"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
+                  required
+                  placeholder="Enter your password"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium transition-all shadow-md hover:shadow-lg"
+              >
+                Login
+              </button>
+              <p className="text-sm text-center text-gray-600 mt-4">
+                Don't have an account? <a href="#" onClick={() => {setShowPopup(false); setShowRegister(true);}} className="text-green-500 hover:underline">Sign up</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
+      {showRegister && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-2xl shadow-xl w-96 relative flex flex-col items-center">
+            <button
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+              onClick={() => setShowRegister(false)}
+            >
+              ×
+            </button>
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Sign Up</h2>
+            <form className="w-full space-y-6">
+              <div className="flex flex-col">
+                <label className="text-gray-700 font-medium mb-1">Full Name</label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
+                  required
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-gray-700 font-medium mb-1">Email</label>
+                <input
+                  type="email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
+                  required
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-gray-700 font-medium mb-1">Password</label>
+                <input
+                  type="password"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
+                  required
+                  placeholder="Create a password"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium transition-all shadow-md hover:shadow-lg"
+              >
+                Sign Up
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
