@@ -6,22 +6,27 @@ function Navbar() {
 
   return (
     <>
-      <nav className="hidden md:block bg-gray-50 border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <nav className="hidden md:flex lg:block bg-gray-50 border-gray-200 dark:bg-gray-900">
+        <div className="max-w-screen-xl flex items-center lg:justify-between mx-auto p-4">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src="Logo.svg" className="h-5" alt="Site Logo" />
-            <p className="text-xl font-bold dark:text-white">Nexcent</p>
+            <img
+              src="Logo.svg"
+              className="h-5 md:hidden lg:block"
+              alt="Site Logo"
+            />
+            <p className="text-xl font-bold dark:text-white md:hidden lg:block">
+              Nexcent
+            </p>
           </a>
           <div className="w-auto">
             <ul className="font-medium flex items-baseline space-x-8 rtl:space-x-reverse">
               <li>
                 <a
                   href="#"
-                  className="text-white md:bg-transparent md:text-green-300"
-                  aria-current="page"
+                  className="text-gray-900 hover:text-primary  dark:text-white dark:hover:text-white"
                 >
                   Home
                 </a>
@@ -29,7 +34,7 @@ function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                  className="text-gray-900 hover:text-primary  dark:text-white dark:hover:text-white"
                 >
                   Service
                 </a>
@@ -37,7 +42,7 @@ function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                  className="text-gray-900 hover:text-primary dark:text-white dark:hover:text-white"
                 >
                   Features
                 </a>
@@ -45,7 +50,7 @@ function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                  className="text-gray-900 hover:text-primary dark:text-white dark:hover:text-white"
                 >
                   Product
                 </a>
@@ -53,7 +58,7 @@ function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                  className="text-gray-900 hover:text-primary dark:text-white dark:hover:text-white"
                 >
                   Testimonial
                 </a>
@@ -61,14 +66,14 @@ function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-900 hover:text-green-300 dark:text-white dark:hover:text-white"
+                  className="text-gray-900 hover:text-primary dark:text-white dark:hover:text-white"
                 >
                   FAQ
                 </a>
               </li>
               <li>
                 <button
-                  className="text-white text-sm bg-green-600 py-1 px-5 rounded-lg cursor-pointer hover:bg-green-700 transition hover:scale-105"
+                  className="text-white text-sm bg-primary py-1 px-5 rounded-lg cursor-pointer hover:bg-green-700 transition hover:scale-105"
                   onClick={() => setShowPopup(true)}
                 >
                   Login
@@ -79,7 +84,7 @@ function Navbar() {
         </div>
       </nav>
       {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-300 bg-opacity-50">
           <div className="bg-white p-8 rounded-2xl shadow-xl w-96 relative flex flex-col items-center">
             <button
               className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold"
@@ -87,7 +92,9 @@ function Navbar() {
             >
               ×
             </button>
-            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Sign In</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+              Sign In
+            </h2>
             <form className="w-full space-y-6">
               <div className="flex flex-col">
                 <label className="text-gray-700 font-medium mb-1">Email</label>
@@ -99,7 +106,9 @@ function Navbar() {
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-gray-700 font-medium mb-1">Password</label>
+                <label className="text-gray-700 font-medium mb-1">
+                  Password
+                </label>
                 <input
                   type="password"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
@@ -114,14 +123,24 @@ function Navbar() {
                 Login
               </button>
               <p className="text-sm text-center text-gray-600 mt-4">
-                Don't have an account? <a href="#" onClick={() => {setShowPopup(false); setShowRegister(true);}} className="text-green-500 hover:underline">Sign up</a>
+                Don't have an account?{" "}
+                <a
+                  href="#"
+                  onClick={() => {
+                    setShowPopup(false);
+                    setShowRegister(true);
+                  }}
+                  className="text-green-500 hover:underline"
+                >
+                  Sign up
+                </a>
               </p>
             </form>
           </div>
         </div>
       )}
       {showRegister && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-300 bg-opacity-50">
           <div className="bg-white p-8 rounded-2xl shadow-xl w-96 relative flex flex-col items-center">
             <button
               className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold"
@@ -129,10 +148,14 @@ function Navbar() {
             >
               ×
             </button>
-            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Sign Up</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+              Sign Up
+            </h2>
             <form className="w-full space-y-6">
               <div className="flex flex-col">
-                <label className="text-gray-700 font-medium mb-1">Full Name</label>
+                <label className="text-gray-700 font-medium mb-1">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
@@ -150,7 +173,9 @@ function Navbar() {
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-gray-700 font-medium mb-1">Password</label>
+                <label className="text-gray-700 font-medium mb-1">
+                  Password
+                </label>
                 <input
                   type="password"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-100 shadow-sm"
