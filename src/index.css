@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
@@ -7,4 +8,5 @@
     --color-primary: #4CAF4F;
     --color-secondery: #263238;
     --color-info: #2194f3;
+    --font-primary: "Inter", sans-serif;
 }
